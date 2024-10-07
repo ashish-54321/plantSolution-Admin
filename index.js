@@ -46,6 +46,10 @@ const plantSchema = new mongoose.Schema({
 // Create a Mongoose model
 const Plant = mongoose.model('Plant', plantSchema);
 
+app.get("/", (req, res) => {
+    res.send("Api's Now Live By Ashish Tiwari");
+});
+
 // POST endpoint to receive plant data and save it to MongoDB
 app.post('/api/plants', async (req, res) => {
     const { plantName, scientificName, waterSchedule, sunlightSchedule } = req.body;
